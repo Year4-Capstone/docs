@@ -1,0 +1,28 @@
+\input{setup/glossary}
+\section{Executive Summary}
+\label{sec:executive_summary}
+
+The Search \& Support Fleet Robotics project focuses on post-disaster relief. A disaster is unpredictable; the aftermath creates an unknown environment, which lacks reliable infrastructure. A collapsed mine may disconnect a centralized computer network. The robot fleet will be able to traverse an unknown environment, relay information and share responsibilities using a mesh network to optimize the search and support process. \gls{fleet} will comprise of one payload-carrying \gls{amr} and two manually operated support robots. The \gls{amr} will be built on the \gls{ibex} robot chassis, while the support robots will utilize \gls{rc} car platforms. 
+
+\gls{fleet} will be capable of detecting \gls{anomalies} in the environment, searching for \gls{persons}, supplying support (water, oxygen and medical kit) to those individuals, and relaying information to the \gls{operations_hub}, see \autoref{fig:fleet_visual_representation}. 
+
+The project's goals define the functional and non-functional requirements that must be met. The metrics of the goals define quantitative baselines that prove that the objectives have been achieved. The numerical goals are based on a case study of a mining collapse at the Red Chris mine, as well as initial calculations and industry baselines. At the Red Chris mine, three workers were trapped underground for 60 hours, without communication with the surface for the majority of that time.
+
+The goals of the project include the following, and are thoroughly defined in \nameref{sec:requirements}, with all assumptions and constraints defined in \nameref{sec:assumptions_constraints}.
+
+\begin{enumerate}
+    \item The Fleet shall \textbf{detect \gls{anomalies}} in the mine.
+    \item The Fleet shall \textbf{locate \gls{persons}} in need.
+    \item The Fleet shall \textbf{carry a \gls{payload} to persons in need} of life support.
+    \item The Fleet shall \textbf{establish communication} with persons in need and relay telemetry for monitoring the state of the mine.
+    \item The Fleet shall \textbf{be scalable}.
+\end{enumerate}
+
+The overall goal of this project is to create a safer, faster, and more effective emergency response system. To achieve this goal, the team will develop a unified system that integrates robotics, sensing, and networking to advance disaster relief operations in the mining industry. This results in both a functional prototype and a framework for autonomous rescue fleets.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/project_visual_representation.png}
+    \caption{Search \& Support Fleet Robotics visual representation}
+    \label{fig:fleet_visual_representation}
+\end{figure}

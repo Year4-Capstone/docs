@@ -1,0 +1,61 @@
+\section{Requirements}
+\label{sec:requirements}
+
+\subsection{Minimum Viable Product}
+\label{sec:mvp}
+
+The minimum viable product will consist of one autonomous and two remotely operated robots, designed by the team as an adaptation of the Offroad Robotics \gls{ibex}. It will also be comprised of 2 remotely controlled robots (pre-purchased \gls{rc} cars), adapted to be part of the Search \& Support Fleet.
+
+The specific goals of this MVP are divided into three main categories: foundational, application-oriented, and innovative goals. These categories focus on solving the defined problem. To achieve these goals, the \gls{amr} and \gls{fleet} will require \gls{features} that define specific functionality. High-level requirements are introduced here, while detailed feature specifications will be defined in the forthcoming Management Plan to ensure traceability between functions and high-level goals (\gls{foundational}, \gls{applied} and \gls{innovative}), while tracking technical progress. These \gls{features} will also include safety-related functionality highlighted in the \nameref{sec:safety_accessibility_environment} section.
+
+\textbf{\gls{foundational}} are fundamental to the completion of the autonomous mobile robot used in a search and support application. These are functional requirements and include the following:
+
+\begin{enumerate}
+    \item The vehicle shall be able to \textbf{detect \gls{anomalies}} from a pre-built map with a success rate of 85\%.
+    \item The vehicle shall be able to \textbf{locate and detect humans} from a pre-built map with a success rate of 85\%.
+    \item The vehicle shall demonstrate mobility by \textbf{carrying a \gls{payload}} of 10 kg. This \gls{payload} will consist of an emergency medical kit, an oxygen tank, and water. The vehicle shall be able to complete a \textbf{baseline round trip} of 250 meters. This distance will be the minimum required to deliver a payload to those in need. The vehicle shall be able to autonomously travel on uneven, \textbf{rocky terrain}. This will be quantified with three metrics: gradability, stability, and step traversal. Where gradability is defined as the ability of the vehicle to climb a slope of 30 degrees. Stability ensures that the vehicle can traverse a 30-degree lateral slope. Step traversal defines that the vehicle will be able to surmount an object with a height of 0.1 meters.
+\end{enumerate}
+
+\textbf{\gls{applied}} focus on the industry and the case at Red Chris Mine. These are non-functional requirements and are defined as follows:
+
+\begin{enumerate}[resume]
+    \item  \gls{fleet} shall be able \textbf{to re-establish communication} with the \gls{persons} within an average of 30 minutes, under the assumption that the trapped individuals are located 100 meters from the entrance along a single tunnel. The quality of the communication will be measured in terms of bandwidth and latency. The supported bandwidth will be 10 \gls{mbps}, and the average latency between the refuge station and operational hub will be less than 250 ms. These metrics represent that the system supports basic telemetry, presence verification, and distress notifications. This will enable individuals in need to communicate their status and the type of support they require. \gls{fleet} shall determine that the \textbf{gas levels in the mine} are safe for advancing with a rescue mission, with a success rate of 95\%. These safe gas levels will be determined by following the mining safety standards, see \nameref{sec:codes_regulations}.
+\end{enumerate}
+
+\textbf{\gls{innovative}} focus on research and fulfilling a gap that the team identified in the industry with a potential solution. These goals are non-functional requirements.
+
+\begin{enumerate}[resume]
+    \item The team envisions a fleet that is designed with a focus on \textbf{seamless \gls{scalability}} with \textbf{specialized robots} to broaden the ability of \gls{fleet}. For example, if the mine site has an autonomous loader, it will be easy to integrate it into \gls{fleet} to assist in clearing rubble. Current mine rescue solutions are not widely available and are limited to specific applications. However, the deployment of autonomous and remotely controlled robots in the field is becoming increasingly common. During a search \& rescue mission, scaling \gls{fleet} to include specialized equipment would maximize its effectiveness and efficiency. To prove the effectiveness of the infrastructure, a new mobile robot (the \gls{amr}) will be added to \gls{fleet} in under 10 minutes using a \gls{ui}, and \gls{fleet} will be able to support a minimum of 3 vehicles (see \autoref{fig:fleet_visual_representation}).
+\end{enumerate}
+\subsection{Stretch Goals}
+\label{sec:sg}
+The extended requirements of the Search \& Support Fleet Robots project build on the goals of the minimum viable product. The stretch goals are divided into three levels, which increase in difficulty and priority, respectively. See \autoref{tab:stretch_goals}.
+
+\begin{table}[H]
+    \centering
+    \caption{Priority levels of stretch goals}
+    \label{tab:stretch_goals}
+    \begin{tabular}{|c|c|p{9cm}|}
+        \hline
+        \textbf{Level} & \textbf{Category} & \textbf{Goal} \\
+        \hline
+        1 & Foundational & The human detection shall use voice recognition. Auditory and visual methods will be employed for the \gls{ui}, in conjunction with speech recognition. \\
+        \cline{2-3}
+          & Foundational & The \gls{amr} shall include a failsafe low-battery return-to-base mode. \\
+        \cline{2-3}
+          & Applied      & \gls{fleet} shall support video/audio feedback (low latency). \\
+        \hline
+        2 & Applied      & The \gls{amr} shall be equipped with a hot-swappable battery. \\
+        \cline{2-3}
+          & Innovative   & The system shall have an \gls{api} to integrate 3rd party robots into \gls{fleet}. \\
+        \cline{2-3}
+          & Applied      & The \gls{amr} shall have an IP67 rating. \\
+        \hline
+        3 & Foundational & The \gls{amr} shall have an expanded payload to contain advanced medical kits, increased amounts of oxygen and water, food, and be modular for various applications. \\
+        \cline{2-3}
+          & Applied      & The \gls{amr} shall be equipped with a manipulator for clearing rubble. \\
+        \cline{2-3}
+          & Foundational & \gls{fleet}’s \gls{rc} robots shall be equipped with autonomous capabilities. \\
+        \hline
+    \end{tabular}
+\end{table}

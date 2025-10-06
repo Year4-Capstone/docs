@@ -1,0 +1,27 @@
+\section{Codes and Regulations}
+\label{sec:codes_regulations}
+
+The Search \& Support Fleet Robotics product has an initial target industry and application in Canadian mines, and it is assumed that \gls{fleet} will be manufactured in \textbf{Ontario}. The main categories of \gls{fleet}’s operation include \textbf{Industrial Robots, Collaborative Robots, Operations in Mines, and Autonomous Driving}. The categories have associated standards and regulations that must be complied with. Table~\ref{tab:codes_regulations} defines the codes and standards, explains how the Search \& Support Fleet fits within the related application, and outlines how the team plans to design The Fleet and \gls{amr} to comply with the respective standards.
+
+\begin{table}[H]
+    \centering
+    \caption{Codes and regulations, and the respective compliance plan}
+    \label{tab:codes_regulations}
+    \begin{tabular}{|p{3cm}|p{3cm}|p{4cm}|p{6cm}|}
+        \hline
+        \textbf{Category} & \textbf{Code / Regulations} & \textbf{Application} & \textbf{Compliance} \\
+        \hline
+        Industrial Robots & CAN/CSA-Z434~\cite{csa_z434} & The equipment will be designed and fabricated for an industrial mining environment. The inherent function of the robot introduces hazards defined in CSA-Z434. & The \gls{amr} shall have an \textbf{Emergency Stop} function that overrides all other functions. \\
+        \hline
+        Collaborative Robots & ISO/TS 15066~\cite{iso_15066} & The persons in need and fleet operators will be required to interact with the robot fleet physically. & The Fleet shall have a clear \textbf{Safe Mode} with automatic motion disabled. The method for switching the Fleet into this mode shall be clear and simple. \\
+        \hline
+        Operation in Mines & R.R.O. 1990, Reg. 854~\cite{ontario_ohs} & The deployment of The Fleet in a mine in Ontario requires consideration of the gas levels in the mine. & The Fleet shall be electric, avoiding contributions to the gas levels in the mine. The Fleet shall monitor the gas levels in the mine. \\
+        \hline
+        Autonomous Driving & ISO/TS 17757~\cite{iso_17757} & The \gls{amr} will operate near and around people, vehicles and obstacles. & The \gls{amr} shall \textbf{detect people} with an 85\% success rate. The \gls{amr} shall \textbf{detect obstacles} with an 85\% success rate. \\
+        \cline{2-4}
+                          & ISO 13849-1~\cite{iso_13849} & The \gls{amr} is equipped with a control system. & The \gls{amr} will remain at a safe distance and enter \textbf{Safe Mode} when a human is detected during payload delivery. Human proximity monitoring will use both a thermal and an IR sensor, providing redundant detection. \\
+        \hline
+        Networking & IEEE 802.11s~\cite{ieee_80211s} & The Fleet utilizes a multi-hop mesh network. & The Fleet shall employ a wireless mesh network infrastructure using a chipset that supports 802.11s mode and authenticates securely before exchanging data. \\
+        \hline
+    \end{tabular}
+\end{table}

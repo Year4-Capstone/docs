@@ -1,0 +1,45 @@
+\section{Safety, Accessibility, and the Environment}
+\label{sec:safety_accessibility_environment}
+
+The Search \& Support Fleet Robotics project will be exposed to the environment, deliver a payload to persons in need, and will require a user interface for successful implementation. Inherently, considerations must be made to ensure that there is no negative impact on people or the environment and that no stakeholder is overlooked.
+
+\subsection{Safety Considerations}
+
+The safety of the team and all stakeholders is the priority. To maintain the safety of everyone, emergency systems, testing protocols, and compliance have been considered and defined.
+
+\begin{itemize}
+    \item \textbf{Emergency systems} are features of the \gls{amr} and the Search \& Support Fleet that have a specific goal of ease of disabling or defaulting functionality in the event of an unexpected or unsafe event. 
+    The primary emergency system, an \textbf{Emergency Stop button}, shall be implemented on the \gls{amr} to turn off all actuation and return the \gls{amr} to a safe state within 1 second.
+
+    \item \textbf{Testing protocols} are methods defined by the team for safely conducting tests with the Fleet and the \gls{amr}, and are defined in Table~\ref{tab:testing_protocols}. 
+    Additionally, testing standards have been considered, and the plan for compliance is covered in the \nameref{sec:codes_regulations} section.
+\end{itemize}
+
+\begin{table}[H]
+    \centering
+    \caption{Testing Protocols}
+    \label{tab:testing_protocols}
+    \begin{tabular}{|c|c|p{9cm}|}
+        \hline
+        \textbf{ID} & \textbf{Name} & \textbf{Protocol} \\
+        \hline
+        TP1 & {PPE Requirement} & All \gls{ppe} must be worn during the testing of the \gls{amr} or \gls{fleet}. \gls{ppe} includes safety glasses and non-conductive, cut-resistant gloves. \\
+        \hline
+        TP2 & Team Awareness & Another team member shall be present and aware of the testing. \\
+        \hline
+        TP3 & Safe Distances & The team will remain out of dangerous zones during testing. For example, reaching near the \gls{amr} during operation. \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{itemize}
+    \item \textbf{Compliance} encompasses how the Search \& Support Fleet Robots project will meet external requirements, laws, and standards. The Fleet will not emit unsafe levels of gases. For more information, see the \nameref{sec:codes_regulations} section.
+\end{itemize}
+
+\subsection{Environmental Considerations}
+
+The Search \& Support Fleet must comply with environmental standards. \gls{fleet} will be electric, minimizing the negative environmental implications associated with emissions. It is assumed that the mine sites where \gls{fleet} is deployed will have complied with all legal and regulatory obligations. Thus, for the Search \& Support Fleet prototype, other environmental considerations are assumed to be pre-addressed.
+
+\subsection{Accessibility}
+
+The system must not omit any stakeholders. Differently abled persons shall be able to interact with the system without difficulty. The Level 1 \nameref{sec:sg} define that the \gls{amr} shall have speech recognition and will provide auditory cues. The \gls{amr} and \gls{operations_hub} \gls{ui} will have visual cues of the state of the system as defined in Level 1 \nameref{sec:sg}.
