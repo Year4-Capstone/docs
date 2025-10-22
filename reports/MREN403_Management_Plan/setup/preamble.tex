@@ -1,0 +1,31 @@
+\documentclass[11pt]{article}
+
+% --- Packages ---
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage{float} % for [H] placement of figures
+
+% Paragraph formatting
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\parskip}{1em}   % space between paragraphs
+
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}           % clear all headers and footers
+\rfoot{\thepage}     % page number bottom right
+\renewcommand{\headrulewidth}{0pt} % remove header line
+\renewcommand{\footrulewidth}{0pt} % remove footer line
+
+% Make the "plain" style (used by TOC, new sections, etc.) match
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \rfoot{\thepage}
+}
+\usepackage{enumitem}
