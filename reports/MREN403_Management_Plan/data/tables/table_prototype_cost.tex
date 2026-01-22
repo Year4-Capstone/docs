@@ -1,0 +1,37 @@
+%\begin{landscape}
+\begin{center}
+\begin{table}[H]
+    \centering
+    \caption{Prototype Cost Breakdown (All costs in CAD), excluding Ibex platform hardware.}
+    \label{tab:prototype_cost}
+    \renewcommand{\arraystretch}{1.2} % Adds a bit of vertical space to rows btw
+    \begin{tabular}{|p{5.5cm}|c|r|r|r|p{4.5cm}|}
+        \hline
+        \rowcolor[HTML]{ADADAD} 
+        \textbf{Item} & \textbf{Qty} & \textbf{Unit Cost} & \textbf{Shipping} & \textbf{Subtotal} & \textbf{Notes} \\ \hline 
+        
+        \multicolumn{6}{|l|}{\textbf{Sensing \& Perception}} \\ \hline
+        MiCS-6814 multi-gas sensor module~\cite{mouser:pim569} & 1 & 40.80 & 0.00 & 46.10 & Detects CO, $\text{NO}_2$, $\text{NH}_3$ gases. \\
+        MCP3008 ADC module~\cite{mouser:mcp3008} & 1 & 4.75 & 0.00 & 5.37 & Interface for gas and voltage sensing. \\
+        Ultrasonic sensor (HC-SR04)~\cite{mouser:sen15569} & 2 & 7.99 & 0.00 & 18.06 & Obstacle detection. \\
+        INA260 voltage monitor~\cite{mouser:ina260} & 1 & 15.15 & 0.00 & 17.12 & Monitors battery voltage. \\
+        AMG8833 IR Thermal~\cite{canadarobotix:amg8833} & 1 & 54.39 & 12.86 & 75.99 & Simple thermal imaging for human detection. \\ \hline
+        
+        \multicolumn{6}{|l|}{\textbf{Communication}} \\ \hline
+        ESP32-WROOM-32U~\cite{mouser:esp32} & 2 & 12.30 & 0.00 & 27.80 & Expands mesh network across fleet \\
+        2.4 GHz U.FL Antenna~\cite{digikey:antenna} & 2 & 3.93 & 0.00 & 8.88 & \\ \hline
+        
+        \multicolumn{6}{|l|}{\textbf{Power}} \\ \hline
+        5 V 5 A DC-DC buck converter~\cite{amazon:buckconverter} & 1 & 18.99 & 0.00 & 21.46 & Dedicated Raspberry Pi 5 power supply. \\
+        12 V 12 Ah SLA batteries~\cite{homedepot:battery} & 2 & 43.82 & 0.00 & 99.03 & System Power (Already purchased). \\ \hline
+
+        \multicolumn{6}{|l|}{\textbf{Mechanical \& Integration}} \\ \hline
+        22 AWG wire (25 ft per colour)~\cite{digikey:wire} & 3 & 4.35 & 8.00 & 23.79 & Electrical integration. \\
+        Bike Chain Lubricant~\cite{ct:chain_lubricant} & 1 & 11.99 & 0.00 & 13.54 & Mechanical System maintenance. \\ \hline
+                
+        \multicolumn{4}{|r|}{\textbf{Total}} & \textbf{357.15} & \\ \hline
+    \end{tabular}
+    \renewcommand{\arraystretch}{1}
+\end{table}
+\end{center}
+%\end{landscape}

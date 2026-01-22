@@ -1,0 +1,55 @@
+%\begin{landscape}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{|l|p{3.5cm}|p{2.3cm}|p{2.3cm}|p{2.3cm}|p{5cm}|}
+\caption{Risk identification, likelihood, impact, and mitigation strategies.}
+\label{tab:risk_identification} \\
+
+\hline
+\rowcolor[HTML]{ADADAD} 
+\textbf{ID} & \textbf{Risk} & \textbf{Likelihood} & \textbf{Impact} & \textbf{Risk Level} & \textbf{Mitigation (Feature/Process)} \\
+\hline
+\endfirsthead
+
+\multicolumn{6}{c}{{\bfseries Table~\thetable\ Continued from previous page}} \\
+\hline
+\rowcolor[HTML]{ADADAD} 
+\textbf{ID} & \textbf{Risk} & \textbf{Likelihood} & \textbf{Impact} & \textbf{Risk Level} & \textbf{Mitigation (Feature/Process)} \\
+\hline
+\endhead
+
+\hline \multicolumn{6}{r}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\multicolumn{6}{|l|}{\textbf{Safety}} \\ \hline
+S1 & Exposed Chain Injury & Likely & Severe & High & Cover exposed chains (AMR-SF-005) \\ \hline
+S2 & Emergency Stop Failure & Very Unlikely & Severe & Medium & Inspect the emergency stop mechanism before each use (Process) \\ \hline
+S3 & Electric Shock & Possible & Significant & Med Hi & Cover leads under the switch (AMR-SF-005) \\ \hline
+S4 & Collision with a Person & Possible & Moderate & Medium & Redundant human detection and Safe Mode (AMR-SF-004) \\ \hline
+S5 & Thermal Runaway & Very Unlikely & Severe & Medium & Cover batteries to prevent impact or damage (AMR-SF-005) \\ \hline
+
+\multicolumn{6}{|l|}{\textbf{Technical}} \\ \hline
+T1 & Sensor Failure & Possible & Moderate & Medium & Secure wire connections and include a fuse in the system (AMR-SF-005) \\ \hline
+T2 & Corrupted Software & Likely & Moderate & Medium & Version control and code reviews (Process) \\ \hline
+T3 & Collision with Another Robot & Very Likely & Significant & High & Low test speeds and physically separate vehicles (Process) \\ \hline
+T4 & Communication Loss in Mine & Likely & Significant & Med Hi & Implement maximum distance limits between vehicles (FLT-CM-001) \\ \hline
+T5 & Localization Drift & Likely & Significant & Med Hi & Redundant localization methods (AMR-AU-004) \\ \hline
+T6 & Actuation Failure & Unlikely & Significant & Medium & Calculate maximum payload before testing load capacity (AMR-MA-001) \\ \hline
+
+\multicolumn{6}{|l|}{\textbf{Economic}} \\ \hline
+E1 & Broken Sensor & Possible & Severe & Med Hi & Secure wire connections and include a fuse in the system (AMR-SF-005) \\ \hline
+E2 & Incompatible Hardware Purchased & Unlikely & Moderate & Medium & Each team member reviews and confirms hardware before purchase (Process) \\ \hline
+E3 & Delay in Parts Delivery & Possible & Minor & Low Med & Pre-plan orders assuming significant delay (Process) \\ \hline
+
+\multicolumn{6}{|l|}{\textbf{Legal}} \\ \hline
+L1 & Non-compliance with Codes \& Regulations & Possible & Significant & Med Hi & Features of the system are designed to comply with codes \& regulations (All features) \\ \hline
+L2 & Data Leak & Very Unlikely & Minor & Low & Local mesh network only, and robots are not left unattended with sensitive or proprietary information (FLT-CM-001) \\ \hline
+
+\end{longtable}
+\end{center}
+%\end{landscape}

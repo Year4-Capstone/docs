@@ -1,2 +1,34 @@
 \section{Project Development}
 \label{sec:project_development}
+
+\subsection{Overview}
+\label{sec:overview}
+The project will consist of one autonomous robot, which the team designed as an adaptation of the Offroad Robotics Ibex mobile robot. It will also be comprised of two remotely controlled robots (pre-purchased RC cars), adapted to be part of the Search \& Support Fleet.
+
+The specific goals of the project are divided into five high-level goals. The goals are defined more thoroughly in the preceding Project Proposal document. The concise version of the goals is defined as follows:
+\begin{enumerate}[label=\textbf{Goal~\arabic*:}, leftmargin=5em, labelsep=0.5em, align=left]
+    \item The Fleet shall \textbf{detect anomalies} in the mine.
+    \item The Fleet shall \textbf{locate persons in need}.
+    \item The Fleet shall \textbf{carry a payload to persons} in need of life support.
+    \item The Fleet shall \textbf{establish communication} with persons in need and relay telemetry for monitoring the state of the mine.
+    \item The Fleet shall \textbf{be scalable}.
+\end{enumerate}
+
+These goals focus on solving the defined problem while covering foundational, applied and innovative goals. To achieve these goals, the AMR and The Fleet will be defined by functional requirements that distinctly represent specific features. The functional requirements detailed in \autoref{tab:functional_requirements}, located in \nameref{sec:appendix_tables}, ensure traceability between robotics functions and high-level goals while enabling seamless tracking of technical progress. These functional requirements also cover specific feature implementations required to comply with codes and regulations.
+
+To evaluate whether design features are completed within the correct specification for meeting the high-level goals and complying with codes and regulations, testing will be conducted, see \autoref{sec:testing}.
+
+The current features outline the design intended to achieve the minimal viable product. To ensure continuous improvement in the design, design reviews will motivate iterations and improvements to the outline. Section~2.2 Project Management Framework defines the chosen management structure conducive to effective design reviews.
+
+\subsection{Functional Requirements}
+\label{sec:functional_requirements}
+Functional requirements have been divided into six subsystems: Safety (SF), Autonomy (AU), Communications (CM), Accessibility (AC), User Interface (UI), and Mechanical Adaptations (MA). Explicit identifications have been assigned to each feature to ensure definitive traceability, see Equation~(\ref{id_structure}). Common names, descriptions, and criteria are included for ease of understanding. The High-Level Connection column encompasses all high-level goals and codes and regulations that motivate the introduction of respective features.
+
+\begin{equation}
+\text{ID = Physical Project Component - Subsystem - Feature Number}
+\label{id_structure}
+\end{equation}
+
+\subsection{Testing}
+\label{sec:testing}
+The method of testing high-level goals has been defined in the preceding Project Proposal document. Each functional requirement has detailed acceptance criteria that coincide with the requirements of the related high-level goals and codes \& regulations. The acceptance criteria will be defined by the team when each task is started and the initial research on that task is complete. Tests are conducted to verify the completion of each functional requirement, which the team will define after completing the initial research. The tests will be closely related to the acceptance criteria and will be included in the Jira feature description along with the acceptance criteria.

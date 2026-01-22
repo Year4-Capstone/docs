@@ -1,0 +1,47 @@
+\subsection{User Interface Subsystem Progress}
+\label{sec:ui}
+
+Foundational progress has been made in the User Interface Subsystem, as highlighted in \autoref{tab:table_ui}, and the updated Gantt chart is illustrated in \autoref{fig:gantt_ui}. 
+
+\begin{table}[H]
+\centering
+\caption{User Interface (UI) Progress Summary.}
+\begin{tabular}{p{3cm} p{5cm} c c c}
+\toprule
+ID & Name & Progress & Task Mod. & Sched. Mod. \\
+\midrule
+AMR-UI-001 & Onboard User Interface & No & No & No \\
+FLT-UI-001 & Basic Fleet Web Interface & Yes & No & EXTENDED \\
+FLT-UI-002 & External Fleet Web Interface & No & No & DELAYED \\
+\bottomrule
+\end{tabular}
+\label{tab:table_ui}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{reports/MREN403_Progress_Report/images/User Interface Gantt.png}
+    \caption{User Interface (UI) Updated Gantt Chart.}
+    \label{fig:gantt_ui}
+\end{figure}
+
+Progress for the basic web interface (\textbf{FLT-UI-001}) has been steadily made. The key achievements include ROS2 integration, 3D visualizations, and diagnostics. Using WebSockets for communication, the web dashboard can read ROS2 topics and render the meshes defined in the URDF. This capability enables the web interface to replicate core RViz utilities, such as setting an initial pose and generating navigation waypoints, including manual selection (see \hyperref[sec:autonomy]{\textit{Autonomy Subsystem}} for detailed information on waypoint generation). Using WASD, the web dashboard can also override the Nav2 controls. The dashboard features a 3D visualization environment that displays the robot’s current pose, costmaps, Nav2 paths, etc. (see \autoref{fig:web_dashboard} for a screenshot of the dashboard interface). A significant technical challenge was correctly interpreting the Transform (TF) tree, particularly for the LiDAR visualization. The web dashboard also includes various diagnostics to ensure the required topics and services are active.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.99\linewidth]{reports/MREN403_Progress_Report/images/web_dashboard_waypoints.png}
+    \caption{Screen capture showing the web dashboard including the generated waypoints.}
+    \label{fig:web_dashboard}
+\end{figure}
+
+\subsubsection{Schedule Modifications}
+\begin{itemize}
+    \item \textbf{FLT-UI-001:} Extended to integrate upcoming features that are currently in development.
+    \item \textbf{FLT-UI-002:} Delayed the task to prioritize the robustness of the main dashboard.
+\end{itemize}
+
+
+
+
+

@@ -1,9 +1,9 @@
 \section{Resource Management}
-\label{sec:resource management}
+\label{sec:resource_management}
 
-Effective resource management ensures that the team’s digital infrastructure supports collaboration, version control, and accountability across all subsystems. Development resources are organized to align with the sprint-based framework and integrated risk controls described in \autoref{sec:team organization} and \autoref{sec:risk_mitigation}.
+Effective resource management ensures that the team’s digital infrastructure supports collaboration, version control, and accountability across all subsystems. Development resources are organized to align with the sprint-based framework and integrated risk controls described in the \nameref{sec:team organization} and \nameref{sec:risk_mitigation} Sections.
 
-A GitHub organization stores all the repositories for the Search \& Support Fleet Robotics project. These repositories manage all source code, hardware design files, and formal documentation. The main repository, \texttt{search-support-robots}, serves as a central repo connected to the following submodules:
+A GitHub organization stores all the repositories for the Search \& Support Fleet Robotics project. These repositories manage all source code, hardware design files, and formal documentation. The main repository, \textbf{search-support-robots}, serves as a central repo connected to the following submodules:
 
 \begin{itemize}
     \item \textbf{dev-tools}: environment setup scripts and instructions.
@@ -14,6 +14,6 @@ A GitHub organization stores all the repositories for the Search \& Support Flee
     \item \textbf{docs}: LaTeX source for reports.
 \end{itemize}
 
-This modular structure supports the development of concurrent subsystems and bug traceability, while maintaining version control. Each repository shares a standardized branching model (\textbf{main}, \textbf{feature}, \textbf{bugfix}). Branch protection rules prevent direct pushes to \textbf{main} and require peer-approved pull requests to be merged. In addition, GitHub Actions prevent pull requests from being merged into the \textbf{main} branch unless all related requirements pass. The current requirements include building ROS2 packages, compiling Arduino firmware, and generating Overleaf PDFs without error. These version control safeguards serve as a risk mitigation consistent with \autoref{sec:risk_mitigation}, reducing data loss or corrupted code.
+This modular structure supports the development of concurrent subsystems and bug traceability, while maintaining version control. Each repository shares a standardized branching model (\textbf{main}, \textbf{feature}, \textbf{bugfix}). Branch protection rules prevent direct pushes to \textbf{main} and require peer-approved pull requests to be merged. In addition, GitHub Actions prevent pull requests from being merged into the \textbf{main} branch unless all related requirements pass. The current requirements include building ROS2 packages, compiling Arduino firmware, and generating Overleaf PDFs without error. These version control safeguards serve as a risk mitigation consistent with the \nameref{sec:risk_mitigation} Section, reducing data loss or corrupted code.
 
-Integration between Jira and GitHub provides traceability between pull requests and task IDs derived in Section 1.1 Features. Microsoft Teams serves as the main platform for non-code communication, as discussed in Section 2.3.2 Communication Channels. Also, Teams stores shared files, meeting notes, and presentation slides. The GitHub organization and all repositories within it are co-owned by the team members to ensure equal access.
+Integration between Jira and GitHub provides traceability between pull requests and task IDs derived in the \nameref{sec:functional_requirements} Section. Microsoft Teams serves as the main platform for non-code communication, as discussed in the \nameref{sec:com_chans} Section. Also, Teams stores shared files, meeting notes, and presentation slides. The GitHub organization and all repositories within it are co-owned by the team members to ensure equal access.

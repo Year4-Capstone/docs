@@ -1,0 +1,75 @@
+\subsection{Autonomy Subsystem Progress}
+\label{sec:autonomy}
+
+Significant progress has been made in the Autonomy Subsystem, as highlighted in \autoref{tab:table_af}, and the updated Gantt chart is illustrated in \autoref{fig:gantt_af}. 
+
+\begin{table}[H]
+\centering
+\caption{Autonomy (AU) Progress Summary.}
+\begin{tabular}{p{3cm} p{5cm} c c c}
+\toprule
+ID & Name & Progress & Task Mod. & Sched. Mod. \\
+\midrule
+AMR-AU-001 & Robot Model and Simulation Setup & COMPLETED & No & No \\
+AMR-AU-002 & Control System Development & Yes & No & EXTENDED \\
+AMR-AU-003 & Sensor Integration & Yes & No & No \\
+AMR-AU-004 & Manual Control System & Yes & MERGED & MERGED\\
+AMR-AU-005 & Localization and Odometry & Yes & No & EXTENDED \\
+AMR-AU-006 & Mapping and Perception & Yes & Yes &  EXTENDED \\
+AMR-AU-007 & Navigation and Path Planning & Yes & No &  EXTENDED \\
+AMR-AU-008 & Anomaly Detection & Yes & No & No \\
+\bottomrule
+\end{tabular}
+\label{tab:table_af}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{reports/MREN403_Progress_Report/images/Autonomy Gantt.png}
+    \caption{Autonomy (AU) Updated Gantt Chart.}
+    \label{fig:placeholder}
+    \label{fig:gantt_af}
+\end{figure}
+
+Work on \textbf{AMR-AU-001} has been completed; it provides a stable foundation for testing autonomous and fleet behaviour. The team created a URDF that integrates CAD-designed visuals along with the properties of the IBEX. This includes the joint positions, LiDAR, and IMUs. Simulation worlds were sourced to simulate a mining environment in Gazebo. The team overcame initial compatibility challenges while updating the simulation worlds to the Gazebo version required for ROS2 Jazzy.
+
+Significant progress has been made on the control system (\textbf{AMR-AU-002}). Custom C++ drivers were developed to interface with the Phidgets hardware directly with the ROS2 control framework. A current challenge is the USB data bandwidth limit on the Phidget Hubs. The planned mitigation strategy is to investigate an optimization approach to limit the amount of data that must be continuously sent to maintain smooth motor motion and receive reliable feedback. The main drive motors utilize a differential drive controller, while the flipper's utilize a PID position controller. In addition to the position controller, a flipper homing sequence was created utilizing limit switches. This ensures an accurately calibrated configuration at startup. The team is currently addressing the challenge that the PID position controller requires further tuning, as oscillations persist with the current settings.
+
+The LiDAR and encoders have been fully integrated and are operational; the IMUs have yet to be integrated, but they function. For localization and odometry (\textbf{ARM-AU-005}), the system currently uses SLAM (2D) and AMCL, both of which are based on LiDAR and encoder odometry data. The Mapping and Perception (\textbf{AMR-AU-006}) feature description has been updated to no longer include 3D mapping (out of scope) and now includes adding support for multiple 2D maps (multi-zone support). A challenge is retaining the quality of state estimation over time in the mine environment. The planned mitigation is to reinforce the localization with an Unscented Kalman Filter. This entails more thorough research into the best estimation method.
+
+The navigation stack (\textbf{AMR-AU-007}) is functional and utilizes the ROS2 Nav2 framework, utilizing the Model Predictive Path Integrator (MPPI) controller for predictive control, a behaviour tree for recovery management, and collision monitoring to safeguard both the LiDAR and nearby persons. The current challenge the team is facing is that the IBEX intermittently struggles to rotate on the spot without needing to reverse. The planned mitigation for this challenge is to conduct further investigation into our current controller tuning and continue research into superior methods.
+
+The team is also developing a custom waypoint-generation system that uses a maximum-margin approach, as shown in \autoref{fig:waypoints}. It incorporates border inflation, slightly larger than half the robot's size, filters the map, and only generates waypoints within reachable poses. To determine the heading of the waypoint, both the tangent to the maximum margin and the previous waypoint are used as heuristics. The subsequent waypoints fan out from the initial pose estimate to create an ordering system. Additionally, the orientation at termination points faces away from the majority of waypoints. To control the generation of waypoints, there are tunable parameters for merge radius and spacing to optimize the location of the generated points.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{reports/MREN403_Progress_Report/images/Search_Planning_Points.png}
+    \caption{Screencapture of simulated environment with generated waypoints.}
+    \label{fig:waypoints}
+\end{figure}
+
+Anomaly Detection (\textbf{AMR-AU-008}) has been set up using the obstable\_detector library, which has been tuned specifically for the testing environment and IBEX platform. Detected obstacles are filtered using both temporal features and comparisons with the ground truth map. These filtering methods have tunable tolerances; the simulation results are shown in \autoref{fig:gazebo} and \autoref{fig:anomoly}. However, the team is encountering challenges with the clustering algorithm due to the proximity to walls and other unknown objects. Accurately distinguishing between a human, potentially leaning against a wall, and a static rock is important. The team is considering switching to a non-clustering method to improve detection reliability.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{reports/MREN403_Progress_Report/images/Anomaly_Detection_House.png}
+    \caption{Screen capture of Gazebo world showing addition cylindrical anomaly.}
+    \label{fig:gazebo}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{reports/MREN403_Progress_Report/images/Anomoly_Detection.png}
+    \caption{Screen capture of RViz demonstrating the ability of anomoly detectiong, red cylinder shown in red.}
+    \label{fig:anomoly}
+\end{figure}
+
+\subsubsection{Schedule Modifications}
+\begin{itemize}
+    \item \textbf{AMR-AU-002:} Extended to accommodate additional PID tuning for the flipper's position controller, specifically to address oscillations observed during testing.
+    \item \textbf{AMR-AU-004:} Merged into \textbf{AMR-AU-002} as the development tasks significantly overlapped.
+    \item \textbf{AMR-AU-005 \& AMR-AU-007:} Extended to finalize the integration of IMU sensor fusion. Additionally, \textbf{AMR-AU-007} was extended to further refine the path-planning and autonomous-control systems.
+    \item \textbf{AMR-AU-006:} The task scope was reworked and extended to support multi-zone mapping.
+\end{itemize}
+

@@ -1,0 +1,41 @@
+\subsection{Safety Subsystem Progress}
+\label{sec:safety}
+
+Foundational progress has been made in the Safety Subsystem, as highlighted in \autoref{tab:table_sf}, and the updated Gantt chart is illustrated in \autoref{fig:gantt_sf}. 
+
+\begin{table}[H]
+\centering
+\caption{Safety (SF) Progress Summary.}
+\begin{tabular}{p{3cm} p{5cm} c c c}
+\toprule
+ID & Name & Progress & Task Mod. & Sched. Mod. \\
+\midrule
+AMR-SF-001 & Safe Mode & Yes & No & EXTENDED \\
+AMR-SF-002 & Emergency Stop & No & REMOVED & REMOVED \\
+AMR-SF-003 & Gas Level Monitoring & No & No & DELAYED \\
+AMR-SF-004 & Human Detection and Proximity Safety & Yes & No & EXTENDED \\
+AMR-SF-005 & Mechanical Servicing & Yes & NEW & NEW \\
+\bottomrule
+\end{tabular}
+\label{tab:table_sf}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{reports/MREN403_Progress_Report/images/Safety Gantt3.png}
+    \caption{Safety (SF) Updated Gantt Chart.}
+    \label{fig:gantt_sf}
+\end{figure}
+
+Preliminary Safe Mode operations (\textbf{AMR-SF-001}) have been achieved. In simulation, a collision monitor was created using a bounding box at the front of the robot. During real-world testing, when an object enters the bounding box, the robot automatically stops moving and resumes motion once the object is removed. Initial testing confirms successful motor disablement, though further development into the optimal size and shape of the bounding box is required. Also, nav2 controls can be overridden with the gamepad, providing an extra level of operational safety and manual control during testing and deployment. The emergency stop was deemed redundant, as the robot already has a switch that forces it to cease all functions.
+
+Initial human detection pipelines (\textbf{AMR-SF-003}) using the microphone array have been implemented. The mic array processes audio data to detect predefined keywords (“stop” and “help”), along with their associated confidence levels and directional information. This functionality has been integrated into a ROS2 publisher node, which publishes these values to a dedicated topic for use by the safety, autonomy, anomaly detection, and collision monitoring subsystems. Challenges encountered when converting the existing mic array Python script to a ROS2 node included resolving package compatibility issues within the ROS environment and restructuring the script's functionality to conform to the ROS node architecture. An additional feature was added to the workflow Mechanical Servicing (\textbf{AMR-SF-005}), which involves preventive maintenance, such as tightening loose bolts, replacing bolts, and covering exposed electrical leads.
+
+\subsubsection{Schedule Modifications}
+\begin{itemize}
+    \item \textbf{AMR-SF-001:} Extended to allow for sufficient time to integrate auxiliary features still in development (e.g., mic array, game pad, and web dashboard). 
+    \item \textbf{AMR-SF-002:} Removed due to redundancy with existing switch.
+    \item \textbf{AMR-SF-003:} Delayed due to sensor delivery delays. 
+    \item \textbf{AMR-AU-004:} Extended to allow for time to integrate mic array with robot. Further delayed due to delays in receiving the thermal camera.
+    \item \textbf{AMR-AU-005:} Added to ensure robot hardware is secured. 
+\end{itemize}

@@ -1,4 +1,28 @@
 \newpage
+\begin{landscape}
 \section{Appendix}
-\printglossary[type=\acronymtype,title={Acronyms \& Abbreviations}]
-\printglossary[title={Definitions}]
+\subsection{Appendix Tables}
+\label{sec:appendix_tables}
+
+\input{data/tables/table_functional_requirements}
+
+\input{data/tables/table_member_roles}
+\clearpage
+\input{data/tables/table_task_breakdown}
+\input{data/tables/table_risk_identification}
+\input{data/tables/table_prototype_cost} 
+\input{data/tables/table_lifecycle_costs}
+\subsection{Appendix Figures}
+\label{sec:appendix_figures}
+\input{data/figures/gantt} 
+\end{landscape}
+\input{data/figures/figure_budget_allocation} 
+\input{data/figures/figure_budget_distribution}
+
+\newpage
+\glsaddall
+% Print the full glossary
+\printglossary[type=\acronymtype,title={Acronyms \& Abbreviations},  nonumberlist]
+\printglossary[title={Definitions},  nonumberlist]
+
+

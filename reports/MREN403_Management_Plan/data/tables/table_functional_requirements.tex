@@ -1,0 +1,68 @@
+%\begin{landscape}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{|l|l|p{7cm}|p{4cm}|}
+\caption{Functional Requirements of Search \& Support Fleet Robotics}
+\label{tab:functional_requirements} \\
+\hline
+\rowcolor[HTML]{ADADAD} 
+\textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{High-Level Connection} \\
+\hline
+\endfirsthead
+
+\multicolumn{4}{c}%
+{{\bfseries Table~\thetable\ Continued from previous page}} \\
+\hline
+\rowcolor[HTML]{ADADAD} 
+\textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{High-Level Connection} \\
+\hline
+\endhead
+
+\hline \multicolumn{4}{r}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\multicolumn{4}{|l|}{\textbf{Safety (SF)}} \\ \hline
+AMR-SF-001 & Safe Mode & The robot enters a state with no actuation. & Codes \& Regulations \\ \hline
+AMR-SF-002 & Emergency Stop & Easily accessible button that cuts power to stop motion immediately. Overrides normal controls, stopping motors, actuators and power circuits. & Codes \& Regulations \\ \hline
+AMR-SF-003 & Gas Level Monitoring & The fleet will collect gas data and provide warnings and telemetry accordingly. & Goal 4 \\ \hline
+AMR-SF-004 & Human Detection and Proximity Safety & Humans can be detected, and the robot will enter safe mode when humans are close to the AMR. & Goal 2, Codes \& Regulations \\ \hline
+AMR-SF-005 & Covered and Secure Hardware & All dangerous hardware is covered. All wires are secure. Fuse(s) are included in the electrical system. & Codes \& Regulations \\ \hline
+
+\multicolumn{4}{|l|}{\textbf{Autonomy (AU)}} \\ \hline
+AMR-AU-001 & Robot Model and Simulation Setup & Create a complete digital model of the AMR in URDF and test it in Gazebo for validation. & Goal 2, Goal 3 \\ \hline
+AMR-AU-002 & Control System Development & Enable joystick-based control through ROS 2, connect to Phidget motors, and create kinematics with tuned PID values. & Goal 2, Goal 3 \\ \hline
+AMR-AU-003 & Sensor Integration & Connect and calibrate all sensors (LiDAR, IMU, encoders) to publish correct data and align in the TF tree. & Goal 2, Goal 3 \\ \hline
+AMR-AU-004 & Manual Control and Control System Development & Enable joystick-based control through ROS 2, connect to Phidget motors, and create a control system with tuned PID values. &  \\ \hline
+AMR-AU-005 & Localization and Odometry & Fuse encoder and IMU data for accurate position tracking and drift-free motion estimation. & Goal 2, Goal 3 \\ \hline
+AMR-AU-006 & Mapping and Perception & Generate 3D maps from LiDAR and IMU data to support environment understanding and navigation. & Goal 1, Goal 2, Goal 3 \\ \hline
+AMR-AU-007 & Navigation and Path Planning & Use ROS 2 Nav2 to plan and follow paths between goals with obstacle avoidance. & Goal 1 \\ \hline
+AMR-AU-008 & Anomaly Detection & Detect and log changes in the mapped environment, then display them. & Goal 2, Goal 3 \\ \hline
+
+\multicolumn{4}{|l|}{\textbf{Communications (CM)}} \\ \hline
+FLT-CM-001 & Mesh Network & Create the mesh network between nodes. & Goal 4, Goal 5 \\ \hline
+FLT-CM-002 & Wi-Fi Propagation & Communication between ESP32s, RPI, and a computer utilizing the mesh network. & Goal 4 \\ \hline
+FLT-CM-003 & Bluetooth Propagation & Communication between ESP32s, RPI, and a computer utilizing Bluetooth. & Goal 4 \\ \hline
+
+\multicolumn{4}{|l|}{\textbf{Accessibility (AC)}} \\ \hline
+AMR-AC-001 & Voice Control & This includes preset, logical/intuitive commands. Includes audio feedback. & Goal 2, Code \& Regulations \\ \hline
+AMR-AC-002 & Visual Indication & Define an LED pattern that is logical/intuitive. Words on LCD. & Code \& Regulations \\ \hline
+
+\multicolumn{4}{|l|}{\textbf{User Interface (UI)}} \\ \hline
+AMR-UI-001 & Onboard User Interface & The AMR will have a physical interface for basic communication through the fleet, allowing users to view battery health and control the mode of the AMR. & Goal 4, Goal 5 \\ \hline
+FLT-UI-001 & Basic Fleet Hosted Web Interface & Should be able to connect to the fleet with a computer. & Goal 4, Goal 5 \\ \hline
+FLT-UI-002 & Externally Hosted Web Interface & Web interface for setting up a new robot on the fleet. & Goal 5 \\ \hline
+
+\multicolumn{4}{|l|}{\textbf{Mechanical Adaptations (MA)}} \\ \hline
+FLT-MA-001 & Hardware Acquisition & Collect all necessary hardware for development. &  \\ \hline
+AMR-MA-001 & Payload Security & The payload will be secured to the body of the vehicle and can be released when needed. The maximum payload will be calculated to prevent damage to motors. & Goal 3 \\ \hline
+AMR-MA-002 & Mounted Sensors & Repair the mount for the LiDAR. Create a mount for the ultrasonic. Create a mount for the depth camera. & Goal 1, Goal 2, Goal 3, Goal 4, Codes \& Regulations \\ \hline
+FLT-MA-002 & RC Robots & Two RC cars are working and part of the fleet, propagating data. & Goal 4, Goal 5 \\ \hline
+
+\end{longtable}
+\end{center}
+%\end{landscape}

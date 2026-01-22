@@ -1,0 +1,128 @@
+%\begin{landscape}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{|l|l|p{7cm}|l|}
+\caption{Tasks involved in every Functional Requirement.}
+\label{tab:tasks} \\ 
+\hline
+\rowcolor[HTML]{ADADAD} 
+\textbf{ID} & \textbf{Task} & \textbf{Description} & \textbf{Assigned Team Member} \\ \hline
+\endfirsthead
+
+\hline
+\rowcolor[HTML]{ADADAD} 
+\textbf{ID} & \textbf{Task} & \textbf{Description} & \textbf{Assigned Team Member} \\ \hline
+\endhead
+
+\hline \multicolumn{4}{r}{\textit{Continued on next page}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\multicolumn{4}{|l|}{\textbf{Safety (SF)}} \\ \hline
+\multirow{2}{*}{AMR-SF-001} & Task A & Send a command to compute that stops all motors and enters safe mode & MC \\ \cline{2-4}
+ & Task B & Add a button to AMR’s web interface to enter safe mode when pressed & MC \\ \hline
+
+AMR-SF-002 & Task A & Replace the onboard switch with the E-Stop button & MC \\ \hline
+
+\multirow{2}{*}{AMR-SF-003} & Task A & Code basic test to ensure sensors are functional & MH \\ \cline{2-4}
+ & Task B & Create a program to measure all gas levels and send a warning if levels are too high & MH \\ \hline
+
+\multirow{5}{*}{AMR-SF-004} & Task A & The IR and thermal sensors are working & MH \\ \cline{2-4}
+ & Task B & Get the camera detecting a human & MH \\ \cline{2-4}
+ & Task C & Mic array processing words and direction & LPG \\ \cline{2-4}
+ & Task D & Word Commands are defined and integrated with planning system for controls & LPG \\ \cline{2-4}
+ & Task E & Integrate sensors, camera, mic array, and safe mode & MH \\ \hline
+
+\multirow{2}{*}{AMR-SF-005} & Task A & Design covers for the chains and fasten the covers & MC \\ \cline{2-4}
+ & Task B & Properly attach all electrical wires and cover any exposed leads & MC \\ \hline
+
+\multicolumn{4}{|l|}{\textbf{Autonomy (AU)}} \\ \hline
+\multirow{3}{*}{AMR-AU-001} & Task A & URDF Creation & MC \\ \cline{2-4}
+ & Task B & TF Tree Setup & MC \\ \cline{2-4}
+ & Task C & Simulation Environment & MC \\ \hline
+
+\multirow{3}{*}{AMR-AU-002} & Task A & Teleop twist joy & CB \\ \cline{2-4}
+ & Task B & Phidgets motor controls via ROS2 & CB \\ \cline{2-4}
+ & Task C & PID Tuning & CB \\ \hline
+
+\multirow{4}{*}{AMR-AU-003} & Task A & LiDAR Setup & LPG \\ \cline{2-4}
+ & Task B & IMU integration & LPG \\ \cline{2-4}
+ & Task C & Encoder feedback & CB \\ \cline{2-4}
+ & Task D & Sensor TF alignment & MH \\ \hline
+
+\multirow{3}{*}{AMR-AU-005} & Task A & Odometry Node: Wheel velocity and distance & CB \\ \cline{2-4}
+ & Task B & Sensor Fusion: IMU + encoders & CB \\ \cline{2-4}
+ & Task C & Drift testing & CB \\ \hline
+
+\multirow{5}{*}{AMR-AU-006} & Task A & 2D Mapping (SLAM) & LPG \\ \cline{2-4}
+ & Task B & Mapping data fusion: Combine 2D lidar scans, IMU and encoders & LPG \\ \cline{2-4}
+ & Task C & 3D Mapping & LPG \\ \cline{2-4}
+ & Task D & Map Visualization & LPG \\ \cline{2-4}
+ & Task E & Map Saving and Loading & LPG \\ \hline
+
+\multirow{3}{*}{AMR-AU-007} & Task A & Differential Mapping & MH \\ \cline{2-4}
+ & Task B & Anomaly Classification & MH \\ \cline{2-4}
+ & Task C & Logging and Visualization & CB \\ \hline
+
+\multirow{4}{*}{AMR-AU-008} & Task A & Nav2 Setup & LPG \\ \cline{2-4}
+ & Task B & Costmap Tuning & LPG \\ \cline{2-4}
+ & Task C & Planner configuration & LPG \\ \cline{2-4}
+ & Task D & Waypoint Navigation & LPG \\ \hline
+
+\multicolumn{4}{|l|}{\textbf{Communications (CM)}} \\ \hline
+\multirow{3}{*}{FLT-CM-001} & Task A & Get the Mesh network working between two ESP32s & MC \\ \cline{2-4}
+ & Task B & Add more nodes to the mesh network & MC \\ \cline{2-4}
+ & Task C & Test bandwidth and latency in the mesh & MC \\ \hline
+
+\multirow{3}{*}{FLT-CM-002} & Task A & Communicate between ESP32s and a computer & LPG \\ \cline{2-4}
+ & Task B & Communicate between ESP32s and RPI & LPG \\ \cline{2-4}
+ & Task C & Create commands for the mesh network to return data from the ESP32 & LPG \\ \hline
+
+\multirow{4}{*}{FLT-CM-003} & Task A & Get Bluetooth communication between the ESP32 and a computer & LPG \\ \cline{2-4}
+ & Task B & Bluetooth communication between the RPI and a computer & LPG \\ \cline{2-4}
+ & Task C & Bluetooth communication between the RPI and the ESP32 & LPG \\ \cline{2-4}
+ & Task D & Code program for using Bluetooth to send a file to nearby devices & LPG \\ \hline
+
+\multicolumn{4}{|l|}{\textbf{Accessibility (AC)}} \\ \hline
+\multirow{4}{*}{AMR-AC-001} & Task A & Voice recognition with a mic array & LPG \\ \cline{2-4}
+ & Task B & Code voice control mode on AMR & LPG \\ \cline{2-4}
+ & Task C & Speaker for responses or communication & CB \\ \cline{2-4}
+ & Task D & Implement safety features & MC \\ \hline
+
+\multirow{2}{*}{AMR-AC-002} & Task A & Attach and wire LEDs to AMR & MC \\ \cline{2-4}
+ & Task B & Program LEDs to react based on AMR’s actions & MC \\ \hline
+
+\multicolumn{4}{|l|}{\textbf{User Interface (UI)}} \\ \hline
+\multirow{2}{*}{AMR-UI-001} & Task A & Code program to display key data about AMR on an LCD screen & MH \\ \cline{2-4}
+ & Task B & Add basic commands to be sent from AMR using the LCD screen & MH \\ \hline
+
+\multirow{2}{*}{FLT-UI-001} & Task A & Add a basic web interface to the ESP32 & MH \\ \cline{2-4}
+ & Task B & Update the web interface with data from other nodes & MH \\ \hline
+
+\multirow{2}{*}{FLT-UI-002} & Task A & Create a web interface to set up a new node & LPG \\ \cline{2-4}
+ & Task B & Package the web interface with the mesh setup into one program &  \\ \hline
+
+\multicolumn{4}{|l|}{\textbf{Mechanical Adaptations (MA)}} \\ \hline
+\multirow{2}{*}{FLT-MA-001} & Task A & Research remaining hardware needed & CB \\ \cline{2-4}
+ & Task B & Order hardware & CB \\ \hline
+
+\multirow{2}{*}{FLT-MA-002} & Task A & Determine whether to fix existing RC cars or buy new ones & LPG \\ \cline{2-4}
+ & Task B & Fix RC car or buy new ones, then attach ESP32 to chassis & MH \\ \hline
+
+\multirow{2}{*}{AMR-MA-001} & Task A & Design holder for payload & MC \\ \cline{2-4}
+ & Task B & Attach the payload holder to the AMR & MC \\ \hline
+
+\multirow{6}{*}{AMR-MA-002} & Task A & Design mount for LiDAR & MC \\ \cline{2-4}
+ & Task B & Design mount for ultrasonic sensors & MC \\ \cline{2-4}
+ & Task C & Design mount for the camera \& depth camera & MC \\ \cline{2-4}
+ & Task D & Design mount for IR/thermal sensors & MC \\ \cline{2-4}
+ & Task E & Design mount for mic array & MC \\ \cline{2-4}
+ & Task F & Attach mounts to AMR and run wires for connection & MC \\ \hline
+
+\end{longtable}
+\end{center}
+%\end{landscape}
